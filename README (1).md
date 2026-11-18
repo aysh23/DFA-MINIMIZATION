@@ -1,6 +1,8 @@
-# DFA Minimization Simulator – Group [GroupID]
+# DFA Minimization Simulator – 
 
 CSET302 – Automata Theory and Computability, Milestone-II (Bennett University, SCSET)
+
+AYUSH SINGH
 
 ## Overview
 A browser-based simulator that minimizes a deterministic finite automaton (DFA). The user enters a complete DFA;
