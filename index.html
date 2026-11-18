@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DFA Minimization Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>DFA Minimization Simulator</h1>
+      <p>Enter a deterministic finite automaton and minimize it using partition refinement.</p>
+    </header>
+
+    <section class="panel">
+      <h2>1. DFA Input</h2>
+      <div class="form-grid">
+        <label>States (comma separated)
+          <input id="states" value="A, B, C, D">
+        </label>
+        <label>Alphabet (comma separated)
+          <input id="alphabet" value="0, 1">
+        </label>
+        <label>Initial state
+          <input id="initial" value="A">
+        </label>
+        <label>Final states (comma separated)
+          <input id="finals" value="D">
+        </label>
+      </div>
+      <h3>Transition table</h3>
+      <p class="hint">Enter exactly one destination state for every state and input symbol.</p>
+      <div id="transitionTable" class="table-wrap"></div>
+      <div class="actions">
+        <button id="buildTable" class="secondary">Generate transition table</button>
+        <button id="minimize">Minimize DFA</button>
+        <button id="loadExample" class="secondary">Load example</button>
+      </div>
+      <p id="error" class="error" role="alert"></p>
+    </section>
+
+    <section class="panel">
+      <h2>2. Minimization steps</h2>
+      <p id="stepDescription">Enter a DFA and select “Minimize DFA” to begin.</p>
+      <div class="actions">
+        <button id="previous" class="secondary" disabled>Previous</button>
+        <button id="next" class="secondary" disabled>Next</button>
+        <button id="showAll" class="secondary" disabled>Show final result</button>
+      </div>
+      <div id="partitionView"></div>
+    </section>
+
+    <section class="panel">
+      <h2>3. Minimized DFA</h2>
+      <div id="result"></div>
+    </section>
+
+    <section class="panel">
+      <h2>4. Test a string</h2>
+      <p class="hint">The same string is checked on the original DFA and the minimized DFA.</p>
+      <div class="test-row">
+        <input id="testString" placeholder="Example: 0101">
+        <button id="test">Test string</button>
+      </div>
+      <div id="testResult"></div>
+    </section>
+
+    <footer>Built using HTML, CSS and JavaScript · DFA minimization by partition refinement</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
